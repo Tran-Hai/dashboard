@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from DataPreprocessing import data_preprocessing
 from chart import create_pie_chart, create_bar_chart
+from utils.constants import ma_linh_kien, ma_hien_tuong, ma_nguyen_nhan, ma_nguyen_nhan_goc
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -36,18 +37,27 @@ else:
 
 
 with col1:
-    figure_ht = create_pie_chart(df2, 'HT', 'Hiện Tượng')
+    figure_ht = create_pie_chart(df2, 'HT', 'Hiện Tượng', ma_hien_tuong)
     st.plotly_chart(figure_ht, use_container_width=True)
 
 with col2:
-    figure_nn = create_pie_chart(df2, 'NN', 'Nguyên Nhân')
+    figure_nn = create_pie_chart(df2, 'NN', 'Nguyên Nhân', ma_nguyen_nhan)
     st.plotly_chart(figure_nn, use_container_width=True)
 
 with col3:
-    figure_nng = create_pie_chart(df2, 'NNG', 'Nguyên Nhân Gốc')
+    figure_nng = create_pie_chart(df2, 'NNG', 'Nguyên Nhân Gốc', ma_nguyen_nhan_goc)
     st.plotly_chart(figure_nng, use_container_width=True)
 
 
+col4, col5 = st.columns(2)
+
+with col4:
+    figure_lkdb = create_bar_chart(df2, 'LKDB', 'Linh Kiện Đồng Bộ', ma_linh_kien)
+    st.plotly_chart(figure_lkdb, use_container_width=True)
+
+with col5:
+    figure_lkkttr = create_bar_chart(df2, 'LKKTTR', 'Linh Kiện Không Thể Tách Rời', ma_linh_kien)
+    st.plotly_chart(figure_lkkttr, use_container_width=True)
 
 
 
