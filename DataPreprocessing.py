@@ -17,4 +17,6 @@ def data_preprocessing(file_path, sheet_name):
 
     df.columns = column_names
 
+    df = df.astype(str)
+
     return df
