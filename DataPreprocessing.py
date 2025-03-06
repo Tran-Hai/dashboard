@@ -17,6 +17,10 @@ def data_preprocessing(file_path, sheet_name):
 
     df.columns = column_names
 
+    df['HT'] = df['HT'].astype(float).astype(int).astype(str)
+    df['NN'] = df['NN'].astype(float).astype(int).astype(str)
+    df['NNG'] = df['NNG'].astype(float).astype(int).astype(str)
+
     df = df.astype(str)
 
     return df
