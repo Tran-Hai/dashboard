@@ -52,11 +52,11 @@ with col3:
 col4, col5 = st.columns(2)
 
 with col4:
-    figure_lkdb = create_bar_chart(df2, 'LKDB', 'Linh Kiện Đồng Bộ', ma_linh_kien)
+    figure_lkdb = create_pie_chart(df2, 'LKDB', 'Linh Kiện Đồng Bộ', ma_linh_kien)
     st.plotly_chart(figure_lkdb, use_container_width=True)
 
 with col5:
-    figure_lkkttr = create_bar_chart(df2, 'LKKTTR', 'Linh Kiện Không Thể Tách Rời', ma_linh_kien)
+    figure_lkkttr = create_pie_chart(df2, 'LKKTTR', 'Linh Kiện Không Thể Tách Rời', ma_linh_kien)
     st.plotly_chart(figure_lkkttr, use_container_width=True)
 
 
