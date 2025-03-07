@@ -53,7 +53,11 @@ def create_bar_chart(df, column_name):
     fig.update_xaxes(
         showticklabels=True,
         tickangle=-45,  # Hiển thị tên theo đường chéo
-        title_text=''   # Ẩn tiêu đề trục x
+        title_text='' ,  # Ẩn tiêu đề trục x
+        #tickangle=-90,  # Đặt góc xoay nhãn là 90 độ
+        tickmode='array',
+        tickvals=list(range(len(grouped_df))),
+        ticktext=grouped_df.index
     )
 
     # Cập nhật trục y để ẩn tên trục
