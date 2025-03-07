@@ -48,6 +48,12 @@ with col3:
     figure_nng = create_pie_chart(df2, 'NNG', 'Nguyên Nhân Gốc', ma_nguyen_nhan_goc)
     st.plotly_chart(figure_nng, use_container_width=True)
 
+with col1:
+    max_ht = df2['HT'].mode()[0]
+    filtered_df2 = df2[df2['HT']==max_ht]
+    figure_max_ht = create_bar_chart(filtered_df2, 'HT')
+    st.plotly_chart(figure_max_ht, use_container_width=True)
+
 
 col4, col5 = st.columns(2)
 
