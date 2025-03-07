@@ -51,9 +51,20 @@ with col3:
 with col1:
     max_ht = df2['HT'].mode()[0]
     filtered_df2 = df2[df2['HT']==max_ht]
-    st.write(filtered_df2)
     figure_max_ht = create_bar_chart(filtered_df2, 'Line')
     st.plotly_chart(figure_max_ht, use_container_width=True)
+
+with col2:
+    max_nn = df2['NN'].mode()[0]
+    filtered_df2 = df2[df2['NN']==max_nn]
+    figure_max_nn = create_bar_chart(filtered_df2, 'Line')
+    st.plotly_chart(figure_max_nn, use_container_width=True)
+
+with col3:
+    max_nng = df2['NNG'].mode()[0]
+    filtered_df2 = df2[df2['NNG']==max_nng]
+    figure_max_nng = create_bar_chart(filtered_df2, 'Line')
+    st.plotly_chart(figure_max_nng, use_container_width=True)
 
 
 col4, col5 = st.columns(2)
