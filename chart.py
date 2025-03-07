@@ -48,7 +48,7 @@ def create_bar_chart(df, column_name):
 
     #grouped_df = grouped_df.sort_values(by='Line', ascending=True)
 
-    fig = px.bar(grouped_df, x=grouped.index, y=grouped.values, template='seaborn')
+    fig = px.bar(grouped_df, x=grouped_df.index, y=grouped_df.values, template='seaborn')
 
     fig.update_xaxes(showticklabels=False)
     fig.update_yaxes(showticklabels=False)
