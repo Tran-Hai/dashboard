@@ -52,7 +52,7 @@ with col1:
     max_ht = df2['HT'].mode()[0]
     filtered_df2 = df2[df2['HT']==max_ht]
     st.write(filtered_df2)
-    figure_max_ht = create_bar_chart(filtered_df2, 'HT')
+    figure_max_ht = create_bar_chart(filtered_df2, 'Line')
     st.plotly_chart(figure_max_ht, use_container_width=True)
 
 
