@@ -64,6 +64,10 @@ def create_bar_chart(df, column_name):
         dtick=1
     )
 
+    fig.update_layout(
+        height=500
+    )
+
     fig.update_traces(hovertemplate='%{x}<br>%{y}')
 
     return fig
