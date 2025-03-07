@@ -66,7 +66,7 @@ with col3:
     figure_max_nng = create_bar_chart(filtered_df2, 'Line')
     st.plotly_chart(figure_max_nng, use_container_width=True)
 
-st.markdown("<br>")
+st.empty()
 col4, col5 = st.columns(2)
 
 with col4:
