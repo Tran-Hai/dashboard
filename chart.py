@@ -59,7 +59,8 @@ def create_bar_chart(df, column_name):
     # Cập nhật trục y để ẩn tên trục
     fig.update_yaxes(
         showticklabels=True,
-        title_text=''   # Ẩn tiêu đề trục y
+        title_text='',   # Ẩn tiêu đề trục y
+        tickmode = 'linear'
     )
 
     fig.update_traces(hovertemplate='%{x}<br>%{y}')
