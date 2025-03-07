@@ -50,11 +50,17 @@ def create_bar_chart(df, column_name):
 
     fig = px.bar(grouped_df, x=grouped_df.index, y=grouped_df.values, template='seaborn')
 
-    fig.update_xaxes(showticklabels=False)
-    fig.update_yaxes(showticklabels=False)
+    fig.update_xaxes(
+        showticklabels=True,
+        tickangle=-45,  # Hiển thị tên theo đường chéo
+        title_text=''   # Ẩn tiêu đề trục x
+    )
 
-    fig.update_xaxes(title = '')
-    fig.update_yaxes(title = '')
+    # Cập nhật trục y để ẩn tên trục
+    fig.update_yaxes(
+        showticklabels=True,
+        title_text=''   # Ẩn tiêu đề trục y
+    )
 
     fig.update_traces(hovertemplate='%{x}<br>%{y}')
 
