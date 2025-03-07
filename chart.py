@@ -43,11 +43,11 @@ def create_pie_chart(df, column_name, title, mapping):
 
 
 def create_bar_chart(df, column_name):
-    grouped_df = df.groupby(by=[column_name], as_index=False)['Group'].count()
+    grouped_df = df.groupby(by=[column_name], as_index=False)['Line'].count()
 
     grouped_df = grouped_df.sort_values(by='Group', ascending=True)
 
-    fig = px.bar(grouped_df, x=column_name, y='Group', template='seaborn')
+    fig = px.bar(grouped_df, x=column_name, y='Line', template='seaborn')
 
     fig.update_xaxes(showticklabels=False)
     fig.update_yaxes(showticklabels=False)
